@@ -2,6 +2,8 @@ const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
 const app = express()
+
+app.use(express.static('dist'))
 app.use(cors())
 app.use(morgan('tiny'));
 morgan.token('host', function(req, res) {
